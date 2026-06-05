@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MASTER BONUS - Club Loading</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+        
+        :root {
+            /* 90% Ultra Luxury Dark Green Space */
+            --bg-dark: #020b05;
+            --surface-green: #041a0d;
+            --glass-core: rgba(4, 26, 13, 0.65);
+            --border-green: rgba(13, 71, 36, 0.5);
+            --neon-green: #00ff66;
+            
+            /* 10% High-Energy Velvet Orange Accent */
+            --casino-orange: #ff5500;
+            --orange-glow: #ff9900;
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: var(--bg-dark); 
+            color: white; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 👑 ULTRA-STANDARD CASINO INTERFACE SHELL */
+        .ultra-shell-container {
+            width: 100%;
+            max-width: 440px;
+            height: 100vh;
+            background: radial-gradient(circle at 50% 30%, #062b14 0%, var(--bg-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-sizing: border-box;
+            position: relative;
+            border-left: 1px solid rgba(13, 71, 36, 0.3);
+            border-right: 1px solid rgba(13, 71, 36, 0.3);
+        }
+
+        /* Luxury Decorative Background Grid System */
+        .ultra-shell-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(0, 255, 102, 0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 255, 102, 0.02) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        /* 💎 HIGH-END GLASSMORPHISM HUDBOX */
+        .premium-hud-card {
+            width: 100%;
+            background: var(--glass-core);
+            border: 1px solid var(--border-green);
+            border-radius: 24px;
+            padding: 45px 25px;
+            box-sizing: border-box;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle Corner Gold Brackets for Ultra Look */
+        .premium-hud-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 1px solid transparent;
+            border-top-color: rgba(255, 85, 0, 0.2);
+            border-radius: 24px;
+            pointer-events: none;
+        }
+
+        /* 🏷️ BRAND ARCHITECTURE */
+        .brand-universe {
+            margin-bottom: 50px;
+        }
+        .brand-title-metallic {
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0;
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #ffffff 30%, #a3ffc2 70%, var(--neon-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 4px 12px rgba(0, 255, 102, 0.2));
+        }
+        .brand-badge-orange {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            color: #ffffff;
+            background: linear-gradient(90deg, var(--casino-orange), #ff8800);
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-top: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(255, 85, 0, 0.3);
+        }
+
+        /* 📊 PROGRESS & METRICS ENGINE */
+        .engine-core-layer {
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .progress-track-premium {
+            width: 100%;
+            height: 7px;
+            background: rgba(2, 11, 5, 0.9);
+            border-radius: 100px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 102, 0.15);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
+            position: relative;
+        }
+        
+        /* 10% Orange Core Progress Fill */
+        .progress-fill-premium {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff8800, var(--casino-orange));
+            box-shadow: 0 0 15px var(--casino-orange), 0 0 30px var(--casino-orange);
+            border-radius: 100px;
+        }
+
+        /* Meta Indicators Group */
+        .meta-indicators {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 18px;
+            padding: 0 2px;
+        }
+        .status-string {
+            font-size: 12px;
+            color: #839e8e;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .status-string i {
+            color: var(--neon-green);
+        }
+        .live-percentage-counter {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--neon-green);
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ultra-shell-container">
+    
+    <!-- Premium HUD Frame Box -->
+    <div class="premium-hud-card">
+        
+        <!-- Branding Stack -->
+        <div class="brand-universe">
+            <h1 class="brand-title-metallic">MASTER BONUS</h1>
+            <span class="brand-badge-orange">VVIP CASINO CLUB</span>
+        </div>
+        
+        <!-- Progress Execution Engine -->
+        <div class="engine-core-layer">
+            <div class="progress-track-premium">
+                <div class="progress-fill-premium" id="live-fill-bar"></div>
+            </div>
+            
+            <!-- Realtime Meta Updates -->
+            <div class="meta-indicators">
+                <span class="status-string">
+                    <i class="fa-solid fa-shield-halved fa-pulse"></i> Handshaking firewall...
+                </span>
+                <span class="live-percentage-counter" id="live-percentage">0%</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    // Ultra-Standard Smooth Counter and Loader Script Layer
+    window.addEventListener('DOMContentLoaded', () => {
+        const fillBar = document.getElementById('live-fill-bar');
+        const percentText = document.getElementById('live-percentage');
+        
+        let count = 0;
+        const totalDuration = 2600; // 2.6 Seconds precise elite loading speed
+        const intervalTime = 26; // Smooth update slices
+        const increment = 100 / (totalDuration / intervalTime);
+
+        const progressCounter = setInterval(() => {
+            count += increment;
+            if (count >= 100) {
+                count = 100;
+                clearInterval(progressCounter);
+                
+                // Perfect seamless redirection trigger instantly at 100%
+                setTimeout(() => {
+                    window.location.href = 'register.html';
+                }, 150);
+            }
+            
+            // Rendering layout engine state values
+            fillBar.style.width = `${count}%`;
+            percentText.innerText = `${Math.floor(count)}%`;
+        }, intervalTime);
+    });
+</script>
+
+</body>
+</html>
+
